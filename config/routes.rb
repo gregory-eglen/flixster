@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
+  resources :lessons, only: [:show]
   namespace :instructor do
     resources :sections, only: [] do
       resources :lessons, only: [:new, :create]
