@@ -1,13 +1,15 @@
 <script>
 
-  $(function(){
+  $(document).on("turbolinks:load", function(){
+
+
     $('.new-lesson-button').click(function( event ) {
       var lessonUrl = ( $( event.target).data('lesson-url') );
       $('#newLessonForm').attr('action', lessonUrl);
     });
-  });
+
   
-  $(function() {
+
     $('.sections').sortable({
       update: function( event, ui ) {
         $.ajax({
@@ -18,10 +20,9 @@
         });
       }
     });
-  });
 
 
-  $(function(){
+
     $('.lessons').sortable({
       update: function( event, ui ) {
         $.ajax({
@@ -32,7 +33,7 @@
         });
       }
     });
-  });
+  })
 </script>
 
 <br /><br />
